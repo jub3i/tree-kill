@@ -16,7 +16,7 @@ Example
 In these examples we kill all the child processes of the process with pid `1`, including the process with pid `1` itself.
 
 ```js
-var kill = require('tree-kill');
+var kill = require('@jub3i/tree-kill');
 
 //NOTE: function call below has async internal components and may only finish
 //killing processes after the call is made
@@ -24,7 +24,7 @@ kill(1, 'SIGKILL');
 ```
 
 ```js
-var kill = require('tree-kill');
+var kill = require('@jub3i/tree-kill');
 kill(1, 'SIGKILL', function(err) {
   if (err) {
     console.log('there was an error:', err);
@@ -51,7 +51,7 @@ Install
 With [npm](https://npmjs.org) do:
 
 ```
-npm install tree-kill
+npm install @jub3i/tree-kill
 ```
 
 License
