@@ -14,16 +14,16 @@ Significant changes include:
 In these examples we kill all the child processes of the process with pid `1`, including the process with pid `1` itself.
 
 ```js
-var kill = require('@jub3i/tree-kill');
+var tkill = require('@jub3i/tree-kill');
 
 //NOTE: function call below has async internal components and may only finish
 //killing processes after the call is made
-kill(1, 'SIGKILL');
+tkill(1, 'SIGKILL');
 ```
 
 ```js
-var kill = require('@jub3i/tree-kill');
-kill(1, 'SIGKILL', function(err) {
+var tkill = require('@jub3i/tree-kill');
+tkill(1, 'SIGKILL', function(err) {
   if (err) {
     console.log('there was an error:', err);
     return;
@@ -34,7 +34,7 @@ kill(1, 'SIGKILL', function(err) {
 
 #Methods
 
-##require('@jub3i/tree-kill')(pid, signal, cb);
+###tkill(pid, signal, cb)
 
 Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`. When the killing is complete `cb` is called.
 
@@ -42,15 +42,15 @@ Sends signal `signal` to all children processes of the process with pid `pid`, i
 
 **Note:** For Windows, this uses `'taskkill /pid PID /T /F'` to kill the process tree.
 
-##require('@jub3i/tree-kill')(pid, signal);
+###tkill(pid, signal)
 
 Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`.
 
-##require('@jub3i/tree-kill')(pid, cb);
+###tkill(pid, cb)
 
 Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`. Signal defaults to `SIGTERM`. When the killing is complete `cb` is called.
 
-##require('@jub3i/tree-kill')(pid);
+###tkill(pid)
 
 Sends signal `SIGTERM` to all children processes of the process with pid `pid`, including `pid`.
 
