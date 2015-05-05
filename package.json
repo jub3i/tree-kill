@@ -1,5 +1,5 @@
 {
-  "name": "tree-kill",
+  "name": "@jub3i/tree-kill",
   "version": "0.0.7",
   "description": "kill trees of processes",
   "main": "index.js",
