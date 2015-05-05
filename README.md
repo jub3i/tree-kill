@@ -48,7 +48,7 @@ Sends signal `signal` to all children processes of the process with pid `pid`, i
 
 ###tkill(pid, cb)
 
-Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`. Signal defaults to `SIGTERM`. When the killing is complete `cb` is called.
+Sends signal `SIGTERM` to all children processes of the process with pid `pid`, including `pid`. When the killing is complete `cb` is called.
 
 ###tkill(pid)
 
