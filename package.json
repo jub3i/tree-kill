@@ -1,0 +1,39 @@
+{
+  "name": "tree-kill",
+  "version": "0.0.7",
+  "description": "kill trees of processes",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jub3i/tree-kill.git"
+  },
+  "homepage": "https://github.com/jub3i/tree-kill",
+  "dependencies": {
+    "once": "1.1.1"
+  },
+  "keywords": [
+    "tree",
+    "trees",
+    "process",
+    "processes",
+    "kill",
+    "signal"
+  ],
+  "author": "jub3i",
+  "contributors": [
+    {
+      "name": "Todd Wolfson",
+      "email": "todd@twolfson.com",
+      "url": "http://twolfson.com/"
+    },
+    {
+      "name": "Peteris Krumins",
+      "email": "peteris.krumins@gmail.com",
+      "url": "http://www.catonmat.net"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jub3i/tree-kill/issues"
+  }
+}
