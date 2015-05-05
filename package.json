@@ -22,14 +22,19 @@
   "author": "jub3i",
   "contributors": [
     {
+      "name": "Peteris Krumins",
+      "email": "peteris.krumins@gmail.com",
+      "url": "http://www.catonmat.net"
+    },
+    {
       "name": "Todd Wolfson",
       "email": "todd@twolfson.com",
       "url": "http://twolfson.com/"
     },
     {
-      "name": "Peteris Krumins",
-      "email": "peteris.krumins@gmail.com",
-      "url": "http://www.catonmat.net"
+      "name": "Will Hilton",
+      "email": "wmhilton@gmail.com",
+      "url": "https://about.me/wmhilton"
     }
   ],
   "license": "MIT",

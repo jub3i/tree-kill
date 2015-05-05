@@ -1,0 +1,6 @@
+npm_publish.sh
+.jscsrc
+.jshintrc
+.git/
+.gitignore
+*.swp
