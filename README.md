@@ -1,4 +1,4 @@
-#Tree Kill
+# Tree Kill
 
 Kill all processes in the process tree, including the root process.
 
@@ -9,7 +9,7 @@ Significant changes include:
 - Patched a race condition [https://github.com/pkrumins/node-tree-kill/issues/7](https://github.com/pkrumins/node-tree-kill/issues/7)
 - Formatted source code to my personal preference, see included .jscsrc and .jshintrc
 
-##Example
+## Example
 
 In these examples we kill all the child processes of the process with pid `1`, including the process with pid `1` itself.
 
@@ -32,9 +32,9 @@ tkill(1, 'SIGKILL', function(err) {
 });
 ```
 
-#Methods
+## Methods
 
-###tkill(pid, signal, cb)
+### tkill(pid, signal, cb)
 
 Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`. When the killing is complete `cb` is called.
 
@@ -42,19 +42,19 @@ Sends signal `signal` to all children processes of the process with pid `pid`, i
 
 **Note:** For Windows, this uses `'taskkill /pid PID /T /F'` to kill the process tree.
 
-###tkill(pid, signal)
+### tkill(pid, signal)
 
 Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`.
 
-###tkill(pid, cb)
+### tkill(pid, cb)
 
 Sends signal `SIGTERM` to all children processes of the process with pid `pid`, including `pid`. When the killing is complete `cb` is called.
 
-###tkill(pid)
+### tkill(pid)
 
 Sends signal `SIGTERM` to all children processes of the process with pid `pid`, including `pid`.
 
-#Install
+## Install
 
 With [npm](https://npmjs.org) do:
 
@@ -64,7 +64,6 @@ npm install @jub3i/tree-kill
 
 **Note:** Install requires an up to date version of npm which supports scoped packages, otherwise npm will install a git repo into the dependencies field of your package.json
 
-License
-=======
+## License
 
 MIT
