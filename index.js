@@ -5,6 +5,12 @@ var once = require('once');
 var isWindows = process.platform === 'win32';
 
 module.exports = function(pid, signal, cb) {
+  //signal is optional argument
+  if (typeof signal === 'function') {
+    cb = signal;
+    signal = 'SIGTERM';
+  }
+
   if (isWindows) {
     exec('taskkill /pid ' + pid + ' /T /F', cb);
   } else {

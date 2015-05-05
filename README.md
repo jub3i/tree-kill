@@ -1,5 +1,4 @@
-Tree Kill
-=========
+#Tree Kill
 
 Kill all processes in the process tree, including the root process.
 
@@ -10,8 +9,7 @@ Significant changes include:
 - Patched a race condition [https://github.com/pkrumins/node-tree-kill/issues/7](https://github.com/pkrumins/node-tree-kill/issues/7)
 - Formatted source code to my personal preference, see included .jscsrc and .jshintrc
 
-Example
-=======
+##Example
 
 In these examples we kill all the child processes of the process with pid `1`, including the process with pid `1` itself.
 
@@ -34,19 +32,29 @@ kill(1, 'SIGKILL', function(err) {
 });
 ```
 
-Methods
-=======
+#Methods
 
-## require('tree-kill')(pid, [signal]);
+##require('@jub3i/tree-kill')(pid, signal, cb);
 
-Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`. Signal defaults to `SIGTERM`.
+Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`. When the killing is complete `cb` is called.
 
-For Linux, this uses `ps -o pid --no-headers --ppid PID` to find the parent pids of `PID`.
+**Note:** For Linux, this uses `ps -o pid --no-headers --ppid PID` to find the parent pids of `PID`.
 
-For Windows, this uses `'taskkill /pid PID /T /F'` to kill the process tree.
+**Note:** For Windows, this uses `'taskkill /pid PID /T /F'` to kill the process tree.
 
-Install
-=======
+##require('@jub3i/tree-kill')(pid, signal);
+
+Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`.
+
+##require('@jub3i/tree-kill')(pid, cb);
+
+Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`. Signal defaults to `SIGTERM`. When the killing is complete `cb` is called.
+
+##require('@jub3i/tree-kill')(pid);
+
+Sends signal `SIGTERM` to all children processes of the process with pid `pid`, including `pid`.
+
+#Install
 
 With [npm](https://npmjs.org) do:
 
@@ -54,7 +62,7 @@ With [npm](https://npmjs.org) do:
 npm install @jub3i/tree-kill
 ```
 
-NOTE: requires an up to date version of npm which supports scoped packages, otherwise npm will install a git repo into the dependencies field of your package.json
+**Note:** Install requires an up to date version of npm which supports scoped packages, otherwise npm will install a git repo into the dependencies field of your package.json
 
 License
 =======
