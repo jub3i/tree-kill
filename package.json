@@ -1,6 +1,6 @@
 {
   "name": "@jub3i/tree-kill",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "kill trees of processes",
   "main": "index.js",
   "repository": {
