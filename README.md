@@ -3,11 +3,11 @@ Tree Kill
 
 Kill all processes in the process tree, including the root process.
 
-This repo is a fork of https://github.com/pkrumins/node-tree-kill
+This repo is a fork of [https://github.com/pkrumins/node-tree-kill](https://github.com/pkrumins/node-tree-kill)
 
 Significant changes include:
-- Included callback support, since this is an function with async internals (https://github.com/pkrumins/node-tree-kill/pull/5)
-- Patched a race condition (https://github.com/pkrumins/node-tree-kill/issues/7)
+- Included callback support, since this is an function with async internals [https://github.com/pkrumins/node-tree-kill/pull/5](https://github.com/pkrumins/node-tree-kill/pull/5)
+- Patched a race condition [https://github.com/pkrumins/node-tree-kill/issues/7](https://github.com/pkrumins/node-tree-kill/issues/7)
 - Formatted source code to my personal preference, see included .jscsrc and .jshintrc
 
 Example
@@ -53,6 +53,8 @@ With [npm](https://npmjs.org) do:
 ```
 npm install @jub3i/tree-kill
 ```
+
+NOTE: requires an up to date version of npm which supports scoped packages, otherwise npm will install a git repo into the dependencies field of your package.json
 
 License
 =======
