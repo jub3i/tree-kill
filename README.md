@@ -13,6 +13,8 @@ Significant changes include:
 Example
 =======
 
+In these examples we kill all the child processes of the process with pid `1`, including the process with pid `1` itself.
+
 ```js
 var kill = require('tree-kill');
 
@@ -31,8 +33,6 @@ kill(1, 'SIGKILL', function(err) {
   console.log('all processes killed');
 });
 ```
-
-In these examples we kill all the child processes of the process with pid `1`, including the process with pid `1` itself.
 
 Methods
 =======

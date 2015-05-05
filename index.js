@@ -6,7 +6,7 @@ var isWindows = process.platform === 'win32';
 
 module.exports = function(pid, signal, cb) {
   if (isWindows) {
-    exec('taskkill /pid ' + pid + ' /T /F');
+    exec('taskkill /pid ' + pid + ' /T /F', cb);
   } else {
     var tree = {};
     tree[pid] = [];
@@ -71,7 +71,7 @@ function buildProcessTree(parentPid, tree, pidsToProcess, cb) {
     delete pidsToProcess[parentPid];
 
     if (allData === '') {
-      // no more parent processes
+      //no more parent processes
       if (Object.keys(pidsToProcess).length === 0) {
         cb();
       }
