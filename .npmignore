@@ -1,6 +1,7 @@
-npm_publish.sh
 .jscsrc
 .jshintrc
+
+#supposedly ignored automatically, including anyway
 .git/
 .gitignore
 *.swp
