@@ -1,7 +1,6 @@
 var childProcess = require('child_process');
 var spawn = childProcess.spawn;
 var exec = childProcess.exec;
-var once = require('once');
 var isWindows = process.platform === 'win32';
 
 module.exports = function(pid, signal, cb) {
@@ -20,7 +19,6 @@ module.exports = function(pid, signal, cb) {
     pidsToProcess[pid] = 1;
 
     buildProcessTree(pid, tree, pidsToProcess, function() {
-      killAll(tree, signal);
       try {
         killAll(tree, signal);
       }
@@ -59,6 +57,7 @@ function killPid(pid, signal) {
     process.kill(pid, signal);
   }
   catch (err) {
+    //NOTE: ESRCH means 'No such process'
     if (err.code !== 'ESRCH') {
       throw err;
     }
@@ -73,7 +72,7 @@ function buildProcessTree(parentPid, tree, pidsToProcess, cb) {
     allData += data;
   });
 
-  var onStdoutClose = once(function() {
+  var onStdoutClose = function() {
     delete pidsToProcess[parentPid];
 
     if (allData === '') {
@@ -103,7 +102,7 @@ function buildProcessTree(parentPid, tree, pidsToProcess, cb) {
       pidsToProcess[pid] = 1;
       buildProcessTree(pid, tree, pidsToProcess, cb);
     });
-  });
+  };
 
   ps.stdout.on('close', onStdoutClose);
 }

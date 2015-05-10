@@ -46,7 +46,7 @@ tkill(1, 'SIGKILL', function(err) {
 
 ### tkill(pid, signal, cb)
 
-Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`. When the killing is complete `cb` is called.
+Sends signal `signal` to all children processes of the process with pid `pid`, including `pid`. When the killing is complete `cb` is called. The `cb` method signature is `cb(err)`.
 
 ### tkill(pid, signal)
 
@@ -54,7 +54,7 @@ Sends signal `signal` to all children processes of the process with pid `pid`, i
 
 ### tkill(pid, cb)
 
-Sends signal `SIGTERM` to all children processes of the process with pid `pid`, including `pid`. When the killing is complete `cb` is called.
+Sends signal `SIGTERM` to all children processes of the process with pid `pid`, including `pid`. When the killing is complete `cb` is called. The `cb` method signature is `cb(err)`.
 
 ### tkill(pid)
 

@@ -8,9 +8,6 @@
     "url": "git://github.com/jub3i/tree-kill.git"
   },
   "homepage": "https://github.com/jub3i/tree-kill",
-  "dependencies": {
-    "once": "1.1.1"
-  },
   "keywords": [
     "tree",
     "trees",
