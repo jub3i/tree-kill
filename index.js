@@ -72,10 +72,10 @@ function buildProcessTree(parentPid, tree, pidsToProcess, cb) {
     allData += data;
   });
 
-  var onStdoutClose = function() {
+  var onClose = function(code) {
     delete pidsToProcess[parentPid];
 
-    if (allData === '') {
+    if (code !== 0) {
       //no more parent processes
       if (Object.keys(pidsToProcess).length === 0) {
         cb();
@@ -104,5 +104,5 @@ function buildProcessTree(parentPid, tree, pidsToProcess, cb) {
     });
   };
 
-  ps.stdout.on('close', onStdoutClose);
+  ps.on('close', onClose);
 }

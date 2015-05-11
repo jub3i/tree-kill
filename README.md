@@ -7,7 +7,7 @@ This repo is a fork of [https://github.com/pkrumins/node-tree-kill](https://gith
 Significant changes include:
 - Included callback support, since this is an function with async internals [https://github.com/pkrumins/node-tree-kill/pull/5](https://github.com/pkrumins/node-tree-kill/pull/5)
 - Patched a race condition [https://github.com/pkrumins/node-tree-kill/issues/7](https://github.com/pkrumins/node-tree-kill/issues/7)
-- Formatted source code to my personal preference, see included .jscsrc and .jshintrc
+- Formatted source code to my personal preference, see included `.jscsrc` and `.jshintrc`
 
 You can find this repo on [npm](https://www.npmjs.com/package/@jub3i/tree-kill) and [github](https://github.com/jub3i/tree-kill).
 
